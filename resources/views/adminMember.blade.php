@@ -18,7 +18,7 @@
             <div class="top-menu">
             	<ul class="nav pull-right top-menu">
                     <li><a class="logout" href="{{url('/auth/logout')}}">Logout</a></li>
-                     <li><a class="logout" href="{{url('/about2')}}">Preview Website</a></li>
+                     <li><a class="logout" onclick="window.open('{{url('/about2')}}');" >Preview Website</a></li>
             	</ul>
             </div>
         </header>
