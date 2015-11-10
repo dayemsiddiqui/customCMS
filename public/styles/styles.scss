@@ -1,0 +1,136 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:100,400);
+
+$fontColor: white;
+$fontSize: 30px;
+
+body {
+
+  //background: url(bg1.jpg);
+  background-size: cover;
+  font-family: 'Lato', sans-serif;
+  font-weight: 100;
+  color: $fontColor;
+  padding-top: 10%;
+  overflow-x: hidden;
+}
+
+img.backImage {
+
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  /* Preserve aspet ratio */
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
+
+}
+
+div.c1 {
+  text-align: center
+}
+
+p.heading {
+  font-size: 30px;
+  /*	font-size: 30px;*/
+  // font-size: 3vw;
+}
+
+div.box {
+
+  background: black;
+  opacity: 0.75;
+  width: 40%;
+  margin: auto;
+  text-align: center;
+  padding: 10px;
+
+  padding-bottom: 20px;
+}
+
+p {
+  font-size: 15px;
+  // font-size: 1.5vw;
+
+}
+
+div.bar {
+  margin-top: 10%;
+  background: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  z-index: 1;
+  width: 105%;
+
+}
+
+p.normal {
+  margin: auto;
+  margin-top: 0;
+  font-size: 20px;
+  font-size: 2vw;
+}
+
+@mixin counter {
+  font-size: 40px;
+  font-size: 4vw;
+  padding: 0;
+  magin-bottom: 0;
+
+}
+
+div.loader {
+
+  background: white;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 999;
+  vertical-align: middle;
+
+  img {
+    margin: auto;
+    display: block;
+    margin-top: 10%;
+
+  }
+  h1 {
+    display: block;
+    text-align: center;
+    color: black;
+  }
+}
+
+#day {
+  @include counter;
+}
+
+#hour {
+  @include counter;
+}
+
+#min {
+  @include counter;
+}
+
+#sec {
+  @include counter;
+}
+
+.timer {
+  text-align: center;
+}
+
+div.social {
+  margin-top: 20%;
+  padding-top: 15px;
+}
+
+@media screen and (max-width: 767px) {
+
+  div.social {
+    margin-top: 50%;
+    padding-top: 15px;
+  }
+}
