@@ -45,6 +45,9 @@
 
                  </div>
             {{--<input type="submit" value="Login">--}}
+            @if (session('status'))
+                <p>Link sent to email please check your email.</p>
+            @endif
             @if(count($errors) > 0)
 
                           @foreach ($errors->all() as $error)
@@ -88,7 +91,11 @@
 <script type="text/javascript" src="{{ asset('libs/owl.carousel.min.js') }}"></script>
 @yield('additionalFooter')
 <script type="text/javascript" src="{{ asset('scripts/scripts.js') }}"></script>
+<script>
+ $(function(){
 
+ });
+</script>
 </body>
 </html>
 

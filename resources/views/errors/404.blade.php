@@ -9,7 +9,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <html>
 	<head>
 		<title>Looks Like You Are Lost</title>
-		
+
 		<link href="{{asset('404css/style.css')}}" rel="stylesheet" type="text/css"  media="all" />
 	</head>
 	<body>

@@ -47,11 +47,11 @@
              <h1 style="padding-left: 25px;" >Get in Touch</h1>
              {!! Form::open(['url' => 'contactMe','class'=> 'formClass', 'files' => true]) !!}
         {{--<form method="POST" action="{{url('/contactMe')}}" style="padding-top: 5px;" accept-charset="UTF-8">--}}
-                    <label class="contact">Name: </label><br>
+                    <label class="contact">Name: <span style="color: red;">*</span> </label><br>
                     <input class="contact" type="text" name="name"><br><br>
-                    <label class="contact" >Email Address: </label><br>
+                    <label class="contact" >Email Address: <span style="color: red;">*</span> </label><br>
                     <input class="contact" name="email" type="text"><br><br>
-                    <label class="contact" >Comment:</label><br>
+                    <label class="contact" >Comment: <span style="color: red;">*</span></label><br>
                     <textarea class="contact" name="comment"></textarea>
                     <br><br>
                     <button value="submit" class="contact" type="submit">SUBMIT</button>

@@ -120,7 +120,7 @@
                 cognitive resources&mdash;use and application of knowledge and information to transform
                 struggles to strengths. Come join us for one of talks, workshops or seminars and be life
                 long learners with us. Watch our News/Activities section or Facebook for more information.</h4>
-             <a href="{{url('news/category/1')}}"><div class="readmore">READ</div></a>
+             <a href='http://intlcounselling.com/news/tags/22'><div class="readmore">READ</div></a>
             </center>
         </div>
 
