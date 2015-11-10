@@ -45,12 +45,12 @@
 
                  </div>
             {{--<input type="submit" value="Login">--}}
-            @if (count($errors) > 0)
-                      <ul>
+            @if(count($errors) > 0)
+
                           @foreach ($errors->all() as $error)
-                              <li>{{ $error }}</li>
+                              <p>{{ $error }}</p>
                           @endforeach
-                      </ul>
+
                   @endif
     </div>
 
