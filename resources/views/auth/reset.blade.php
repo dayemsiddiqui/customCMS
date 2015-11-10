@@ -26,16 +26,19 @@
 <form method="POST" action="/password/reset">
     {!! csrf_field() !!}
     <input type="hidden" name="token" value="{{ $token }}">
-       <div class="body"></div>
+    <div class="body"></div>
     <div class="grad"></div>
     <div class="header" style="margin-left: -50px;">
         <div>Intl<span>Counselling</span></div>
     </div>
     <br>
     <div class="login">
-            <input type="email" name="email" placeholder="email" value="{{ old('email') }}">
-             <input type="password" name="password">
-            <input type="password" name="password_confirmation">
+            <label>Email:</label> <br/>
+            <input type="email" style="margin-bottom: 5px;" name="email"  value="{{ old('email') }}"> <br/>
+            <label>Password:</label> <br/>
+            <input style="margin-top: 0px; margin-bottom: 5px;" type="password" name="password"> <br/>
+            <label>Confirm Password:</label>
+            <input style="margin-top: 0px" type="password" name="password_confirmation">
             <input type="submit" value="Reset Password">
                         
 
