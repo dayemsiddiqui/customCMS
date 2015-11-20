@@ -59,7 +59,8 @@ class PostsController extends Controller
         public function create(){
             $categories= Category::latest()->get();
             $posts= Post::latest()->get();
-            return view('adminPost',compact('categories','posts'));
+            $tagnames = Tag::latest()->get();
+            return view('adminPost',compact('categories','posts', 'tagnames'));
         }
 
         public function categoryShow($id){
@@ -76,7 +77,7 @@ class PostsController extends Controller
             $categories= Category::latest()->get();
             $tags = Posttag::latest()->get();
             $tagnames = Tag::latest()->get();
-            $posts = Tag::find($id)->posts()->get();
+            $posts = Tag::find($id)->posts()->latest()->get();
 
             return view('tagspecific',compact('categories','tags','tagnames','posts'));
         }
@@ -105,7 +106,53 @@ class PostsController extends Controller
         unset($input['image']);
         Post::create($input);
         session()->flash('alert', "New post has been created.");
+
+        //=====================TAG MANIPULATION==============================//
+        $input = $request->input('tags');
+        $post_id  = $id;
+        $newIds = [];
+        if(count($input) > 0){
+            foreach($input as $i){
+                $tags  = Tag::where('tag_name', $i)->count();
+                if ($tags <= 0) {
+                    $newTag = new Tag;
+                    $newTag->tag_name = $i;
+                    $newTag->save();
+                }
+            }
+            foreach($input as $i){
+                $temp = Tag::where('tag_name', $i)->get()[0];
+                array_push($newIds,$temp->id);
+            }
+            foreach($newIds as $i){
+                $count = Posttag::where('post_id', $post_id)->where('tag_id', $i)->count();
+                if ($count <= 0) {
+                    // $tag_id = Tag::where('tag_name', $i)->get()[0];
+                    $newPostTag = new Posttag;
+                    $newPostTag->tag_id = $i;
+                    $newPostTag->post_id = $post_id;
+                    $newPostTag->save();
+                }
+            }
+        }
+        //This placement of the following variable is important dont place it at top
+        $preExisting = Posttag::where('post_id', $post_id)->get();
+        foreach($preExisting as $pre){
+            if(!in_array($pre->tag_id, $newIds)){
+                Posttag::where('tag_id', $pre->tag_id)->where('post_id', $post_id)->delete();
+            }
+        }
+
+
+
+
+
+
         return back();
+
+
+
+
     }
 
     public function contactSend(Requests\ContactRequest $request){

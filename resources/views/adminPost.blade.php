@@ -33,7 +33,7 @@
               <!-- sidebar menu start-->
               <ul class="sidebar-menu" id="nav-accordion">
               
-              	  <p class="centered"><a href="profile.html"><img src="{{asset('assets/img/ui-sam.jpg')}}" class="img-circle" width="60"></a></p>
+              	  <p class="centered"><img src="{{asset('assets/img/ui-sam.jpg')}}" class="img-circle" width="60"></p>
               	  <h5 class="centered">Intl Counselling</h5>
               	  	
                   <li class="mt">
@@ -91,6 +91,7 @@
                          <label style="color: #000000">Category</label>
                          {{--{!! Form::text('category', null, ['class' => 'form-control']) !!}--}}
                          <select name="category" class="form-control">
+                         <option default>Select a category</option>
                          @foreach($categories as $category)
                            <option value='{{$category->id}}'>{{$category->category}}</option>
 
@@ -101,6 +102,13 @@
                          <textarea name="content" id="mytextarea"></textarea>
                          <label style="color: #000000">Upload Image</label>
                          {!! Form::file('image', null) !!}
+                          <label style="color: #000000">Tags:</label>
+                             <select class="multiple form-control" multiple="multiple" name="tags[]">
+                               {{$selected = ""}}
+                               @foreach($tagnames as $tagname)
+                                   <option value="{{$tagname->tag_name}}">{{$tagname->tag_name}}</option>
+                               @endforeach
+                             </select>
                      </div>
 
                      <div class="form-group">

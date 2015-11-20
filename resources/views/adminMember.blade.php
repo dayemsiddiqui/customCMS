@@ -33,7 +33,7 @@
               <!-- sidebar menu start-->
               <ul class="sidebar-menu" id="nav-accordion">
               
-              	  <p class="centered"><a href="profile.html"><img src="{{asset('assets/img/ui-sam.jpg')}}" class="img-circle" width="60"></a></p>
+              	  <p class="centered"><img src="{{asset('assets/img/ui-sam.jpg')}}" class="img-circle" width="60"></p>
               	  <h5 class="centered">Intl Counselling</h5>
               	  	
                   <li class="mt">
@@ -136,6 +136,28 @@
                         {!! Form::close() !!}
                          {{--=================================================================--}}
                  </div>
+
+                 <div class="col-lg-12">
+                 {{--=================================================================--}}
+
+                     {!! Form::open(['url' => 'editMember']) !!}
+                         <div class="form-group">
+                             <label style="color: #000000">Members</label>
+                             <select name="id" class="form-control">
+                             <option value=''>Select a member</option>
+                             @foreach($members as $m)
+                               <option value='{{$m->id}}'>{{ $m->name}}</option>
+
+                               @endforeach
+                             </select>
+
+                         </div>
+                        <div class="form-group">
+                             {!! Form::submit('Edit Member', ['class' => 'btn btn-success']) !!}
+                         </div>
+                         {!! Form::close() !!}
+                          {{--=================================================================--}}
+                  </div>
 
                  <div class="col-lg-12">
                  <div class="content-panel">

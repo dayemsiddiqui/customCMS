@@ -149,7 +149,7 @@
     <div class="col-md-4" style="text-align: center;">
     <a href='{{url("memberDetail/$member->id")}}' style="text-decoration: none;">
     <img src='{{asset("img/emp/$member->image")}}' class="empId"/>
-    <div class="row" ><h2>{{$member->name}}</h2><h5>{{$member->education}}</h5></div>
+    <div class="row" ><h2>{{$member->name}}</h2></div>
     </a>
     </div>
     @endforeach

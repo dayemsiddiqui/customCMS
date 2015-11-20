@@ -55,7 +55,7 @@
                   forced_root_block: false,
                   force_p_newlines: false,
                   toolbar: 'undo redo | styleselect | bold italic underline |  fontselect fontsizeselect | forecolor backcolor | link unlink ',
-                  statusbar: true
+                  statusbar: false
               });
 
               $(".multiple").select2({

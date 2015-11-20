@@ -55,6 +55,35 @@ class MemberController extends Controller
         session()->flash('alert', "A member has been created.");
         return back();
     }
+
+    public function editedMember(Requests\CategoryRequest $request){
+
+        $member = Member::find($request->input('id'));
+        $input = $request->all();
+        $days = $request->input('days');
+        $temp = "";
+        foreach($days as $day){
+            $temp = $temp . "|" . $day;
+        }
+        $member->availability = $temp;
+        if ($request->file('image') && $request->file('image')->isValid())
+        {
+            $path = public_path();
+            $path = $path . "/img/emp";
+            $request->file('image')->move($path, $member->id . ".jpg");
+            $member->image = $member->id . ".jpg";
+        }
+        $member->name = $input['name'];
+        $member->education = $input['education'];
+        $member->content = $input['content'];
+
+        //Member::create($input);
+        $member->save();
+        session()->flash('alert', "Member has been updated.");
+        //return back();
+        return redirect('/newMember');
+    }
+
     public function show(){
         $members= Member::latest()->get();
         Log::info('SOMETHING DIF: '. $members->isEmpty());

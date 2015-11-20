@@ -93,6 +93,16 @@ class AdminController extends Controller
         return view("editPost",compact("post", "categories", "tagsId", "tagnames"));
     }
 
+
+    public function editMember(Requests\TagRequest $request){
+        $memberId = $request->input('id');
+        $member = Member::find($memberId);
+        if($member==null){
+            return back();
+        }
+        return view("editMember",compact("member"));
+    }
+
     public function updateTag(Requests\CreatePostRequest $request){
         $input = $request->input('tags');
         $post_id  = $request->input('id');

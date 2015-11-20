@@ -51,8 +51,10 @@ Route::get('/mydoc', function(){
 
 Route::post('/contactMe','PostsController@contactSend');
 Route::post('/deleteMember', ['middleware' => 'auth', 'uses' =>  'MemberController@delete']);
+Route::post('/editMember', ['middleware' => 'auth', 'uses' =>  'AdminController@editMember']);
 Route::get('/newMember',  ['middleware' => 'auth', 'uses' => 'MemberController@index']);
 Route::post('/addMember', ['middleware' => 'auth', 'uses' => 'MemberController@add']);
+Route::post('/editedMember', ['middleware' => 'auth', 'uses' => 'MemberController@editedMember']);
 Route::post('/passChange','AdminController@changePassword');
 Route::post('/deleteCategory', ['middleware' => 'auth', 'uses' => 'AdminController@deleteCategory']);
 Route::post('/createTag', ['middleware' => 'auth', 'uses' => 'AdminController@addTag']);

@@ -38,7 +38,7 @@
 </div>
 </div>
 <div class="col-lg-9 col-md-8 col-sm-12 nopadding">
-<h1 class="entry-title">{{$member->name}},{{$member->education}}</h1>
+<h1 class="entry-title">{{$member->name}}</h1>
 <div class="entry-content">
 <p style="text-align: justify;">{!! $member->content !!}</p>
 
