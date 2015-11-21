@@ -1,29 +1,6 @@
 @include('adminHeader')
 
-  <body>
 
-  <section id="container" >
-      <!-- **********************************************************************************************************************************************************
-      TOP BAR CONTENT & NOTIFICATIONS
-      *********************************************************************************************************************************************************** -->
-      <!--header start-->
-      <header class="header black-bg">
-              <div class="sidebar-toggle-box">
-                  <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
-              </div>
-            <!--logo start-->
-            <a href="index.html" class="logo"><b>Admin Panel - IntlCounselling</b></a>
-            <!--logo end-->
-
-            <div class="top-menu">
-            	<ul class="nav pull-right top-menu">
-                    <li><a class="logout" href="{{url('/auth/logout')}}">Logout</a></li>
-                     <li><a class="logout" onclick="window.open('{{url('/about2')}}');" >Preview Website</a></li>
-            	</ul>
-            </div>
-        </header>
-      <!--header end-->
-      
       <!-- **********************************************************************************************************************************************************
       MAIN SIDEBAR MENU
       *********************************************************************************************************************************************************** -->
