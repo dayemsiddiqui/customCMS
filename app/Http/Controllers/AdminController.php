@@ -15,6 +15,15 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Routing\Redirector;
 
 
+/**
+ * Class AdminController
+ * The purpose of Admin Controller is to manage
+ * the admin panel and integrate all the other
+ * components of the admin panel together
+ * @package App\Http\Controllers
+ *
+ */
+
 class AdminController extends Controller
 {
     /**
