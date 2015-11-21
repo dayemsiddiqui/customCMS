@@ -90,3 +90,14 @@ Route::post('password/email', 'Auth\PasswordController@postEmail');
 // Password reset routes...
 Route::get('password/reset/{token}', 'Auth\PasswordController@getReset');
 Route::post('password/reset', 'Auth\PasswordController@postReset');
+
+
+//===============================================================//
+//                JSON API CALLS
+//===============================================================//
+Route::get('/getAllPosts', 'PostsController@getAllPosts');
+Route::get('/getAllCategories', 'PostsController@getAllCategories');
+Route::get('/getPost/{id}', 'PostsController@getPost');
+Route::get('/getTags', 'PostsController@getTags');
+Route::get('/getCategoryPost/{id}', 'PostsController@getCategoryPost');
+Route::get('/getTagPost/{id}', 'PostsController@getTagPost');

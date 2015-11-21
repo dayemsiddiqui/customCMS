@@ -142,17 +142,7 @@ class PostsController extends Controller
                 Posttag::where('tag_id', $pre->tag_id)->where('post_id', $post_id)->delete();
             }
         }
-
-
-
-
-
-
         return back();
-
-
-
-
     }
 
     public function contactSend(Requests\ContactRequest $request){
@@ -166,4 +156,80 @@ class PostsController extends Controller
         session()->flash('success', "Your form has been submitted successfully");
         return redirect("/contact");
     }
+
+    //==============================JSON API INTEGRATION=======================================//
+    public function getAllPosts(){
+        $posts= Post::where('show', '1')->latest()->get();
+        if($posts->isEmpty()){
+            $errorResponse = [
+                'errors'    => 'Not found any resource',
+                'message'   => 'The resource you requested was not found may be there is no article published yet'
+            ];
+            return response()->json($errorResponse, 404);
+        }
+        return response()->json($posts);
+    }
+
+    public function getAllCategories(){
+        $categories = Category::latest()->get();
+        if($categories->isEmpty()){
+            $errorResponse = [
+                'errors'    => 'Not found any resource',
+                'message'   => 'The resource you requested was not found may be there is no category published yet'
+            ];
+            return response()->json($errorResponse, 404);
+        }
+        return response()->json($categories);
+    }
+
+    public function getPost($id){
+        $posts= Post::where('id', $id)->get();
+        $tags = Post::find($id)->tags()->latest()->get();
+        if($posts->isEmpty()){
+            $errorResponse = [
+                'errors'    => 'Not found any resource',
+                'message'   => 'The post you are looking for was not found'
+            ];
+            return response()->json($errorResponse, 404);
+        }
+        return response()->json(compact('posts','tags'));
+    }
+
+    public function getTags(){
+        $tagnames = Tag::latest()->get();
+        if($tagnames->isEmpty()){
+            $errorResponse = [
+                'errors'    => 'Not found any resource',
+                'message'   => 'No tags were found'
+            ];
+            return response()->json($errorResponse, 404);
+        }
+        return response()->json($tagnames);
+    }
+
+    public function getCategoryPost($id){
+        $posts = Post::where('category','=',$id)->where('show', '1')->get();
+        if($posts->isEmpty()){
+            $errorResponse = [
+                'errors'    => 'Not found any resource',
+                'message'   => 'No posts were found'
+            ];
+            return response()->json($errorResponse, 404);
+        }
+        return response()->json($posts);
+    }
+
+    public function getTagPost($id){
+        $posts = Tag::find($id)->posts()->latest()->get();
+        if($posts->isEmpty()){
+            $errorResponse = [
+                'errors'    => 'Not found any resource',
+                'message'   => 'No posts were found'
+            ];
+            return response()->json($errorResponse, 404);
+        }
+        return response()->json($posts);
+    }
+
+
 }
