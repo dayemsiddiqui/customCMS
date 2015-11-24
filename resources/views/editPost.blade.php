@@ -101,7 +101,7 @@
                          <label style="color: #000000">Content</label>
                          {{--{!! Form::textarea('content', null, ['class' => 'form-control']) !!}--}}
                          {{--<textarea name="content" class="form-control" cols="30" rows="10">{{$post->content}}</textarea>--}}
-                         <textarea name="content" id="mytextarea">{{$post->content}}</textarea>
+                         <textarea name="content" id="mytextarea">{!!$post->content!!}</textarea>
                          <label style="color: #000000">Upload Image</label>
                          {!! Form::file('image', null) !!}
                          <label style="color: #000000">Tags:</label>

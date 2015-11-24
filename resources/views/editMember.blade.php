@@ -94,7 +94,7 @@
                                         @endforeach
                                       <label style="color: #000000">Details</label>
                                       {{--{!! Form::textarea('content', null, ['class' => 'form-control']) !!}--}}
-                                      <textarea name="content" id="mytextarea">{{$member->content}}</textarea>
+                                      <textarea name="content" id="mytextarea">{!! $member->content !!}</textarea>
                                       <label style="color: #000000">Upload Image</label>
                                       {!! Form::file('image', null) !!}
                                   </div>
