@@ -72,6 +72,10 @@
 
 
                  $('form').submit(function(e) {
+                 if($(this).find("input.form-control").val() == ""){
+                  alert("Please fill the text field");
+                  e.preventDefault();
+                 }
                  if($(this).find('.btn-danger').length != 0)
                 {
                     return confirm("Are you sure you want to delete this?");
