@@ -84,11 +84,7 @@
                            return;
                           }
                      }
-                   if($(this).find("input:checkbox:checked").length == 0){
-                        alert("Please select atleast on checkbox for availability");
-                        e.preventDefault();
-                        return;
-                   }
+
 
                  if($(this).find('.btn-danger').length != 0)
                 {
