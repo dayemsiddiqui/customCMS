@@ -38,6 +38,10 @@ class MemberController extends Controller
         $input = $request->all();
         $days = $request->input('days');
         $temp = "";
+        if(!$days){
+            session()->flash('alert', "Please mark the availability");
+            return back()->withInput($request->all());
+        }
         foreach($days as $day){
             $temp = $temp . "|" . $day;
         }
