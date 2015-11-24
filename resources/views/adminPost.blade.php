@@ -63,8 +63,8 @@
                          {!! Form::text('author', null, ['class' => 'form-control']) !!}
                          <label style="color: #000000">Status</label>
                           <select name="show" class="form-control">
-                          <option value="1">Publish</option>
                           <option value="0">Draft</option>
+                          <option value="1">Publish</option>
                           </select>
                          <label style="color: #000000">Category</label>
                          {{--{!! Form::text('category', null, ['class' => 'form-control']) !!}--}}
@@ -112,7 +112,7 @@
                           <div class="form-group">
                                <label style="color: #000000">Post To Be Deleted</label>
                               <select name="post_id" class="form-control">
-                              <option value=''>Select a post</option>
+                              <option default>Select a post</option>
                               @foreach($posts as $post)
                                 <option value='{{$post->id}}'>{{$post->title}}</option>
                                 @endforeach
@@ -135,7 +135,7 @@
                            <div class="form-group">
                                 <label style="color: #000000">Edit</label>
                                <select name="post_id" class="form-control">
-                               <option value=''>Select a post</option>
+                               <option default>Select a post</option>
                                @foreach($posts as $post)
                                  <option value='{{$post->id}}'>{{$post->title}}</option>
                                  @endforeach

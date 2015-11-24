@@ -99,7 +99,7 @@
                         <div class="form-group">
                             <label style="color: #000000">Members</label>
                             <select name="id" class="form-control">
-                            <option value=''>Select a member</option>
+                            <option default>Select a member</option>
                             @foreach($members as $m)
                               <option value='{{$m->id}}'>{{ $m->name}}</option>
 
@@ -121,7 +121,7 @@
                          <div class="form-group">
                              <label style="color: #000000">Members</label>
                              <select name="id" class="form-control">
-                             <option value=''>Select a member</option>
+                             <option default>Select a member</option>
                              @foreach($members as $m)
                                <option value='{{$m->id}}'>{{ $m->name}}</option>
 

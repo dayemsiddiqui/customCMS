@@ -76,6 +76,15 @@
                   alert("Please fill the text field");
                   e.preventDefault();
                  }
+                  if($(this).find('.btn').length != 0)
+                     {
+                         if($(this).find("select").val().indexOf("Select") != -1){
+                           alert("Please select an appropriate value from the list");
+                           e.preventDefault();
+                           return;
+                          }
+                     }
+
                  if($(this).find('.btn-danger').length != 0)
                 {
                     return confirm("Are you sure you want to delete this?");
