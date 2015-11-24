@@ -100,7 +100,7 @@
                                   </div>
 
                                   <div class="form-group">
-                                      {!! Form::submit('Edit Member', ['class' => 'btn btn-success']) !!}
+                                      {!! Form::submit('Save', ['class' => 'btn btn-success']) !!}
                                   </div>
                                   {!! Form::close() !!}
 
