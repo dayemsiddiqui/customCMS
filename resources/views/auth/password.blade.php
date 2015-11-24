@@ -46,11 +46,13 @@
                  </div>
             {{--<input type="submit" value="Login">--}}
             @if (session('status'))
+                <br/>
                 <p>Link sent to email please check your email.</p>
             @endif
             @if(count($errors) > 0)
 
                           @foreach ($errors->all() as $error)
+                              <br/>
                               <p>{{ $error }}</p>
                           @endforeach
 

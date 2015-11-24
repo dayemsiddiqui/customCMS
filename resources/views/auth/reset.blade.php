@@ -39,7 +39,7 @@
             <input style="margin-top: 0px; margin-bottom: 5px;" type="password" name="password"> <br/>
             <label>Confirm Password:</label>
             <input style="margin-top: 0px" type="password" name="password_confirmation">
-            <input type="submit" value="Reset Password">
+            <input type="submit" value="Reset Password"> <br/>
                         
 
              @if (count($errors) > 0)
