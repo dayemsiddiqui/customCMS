@@ -19,9 +19,9 @@ body{
 	bottom: -40px;
 	width: auto;
 	height: auto;
-	background-image: url(http://ginva.com/wp-content/uploads/2012/07/city-skyline-wallpapers-008.jpg);
+	background-image: url(https://harrytanphoto.files.wordpress.com/2012/08/hz9b4236aweb.jpg);
 	background-size: cover;
-	-webkit-filter: blur(5px);
+	/*-webkit-filter: blur(5px);*/
 	z-index: 0;
 }
 
