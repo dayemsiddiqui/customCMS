@@ -45,6 +45,10 @@ class AdminController extends Controller
     }
     public function add(Requests\CategoryRequest $request){
        $input = $request->all();
+        if($request->input("category") == ""){
+            session()->flash('alert', "Please type a category name");
+            return back();
+        }
         Category::create($input);
         session()->flash('alert', "A category has been created.");
         return back();

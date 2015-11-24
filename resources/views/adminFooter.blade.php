@@ -75,7 +75,9 @@
                  if($(this).find('.btn-danger').length != 0)
                 {
                     return confirm("Are you sure you want to delete this?");
-                }});
+                }
+
+                });
 
 
 
